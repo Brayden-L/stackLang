@@ -2,20 +2,21 @@ package com.braydenl.stackLang;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Objects;
 import java.util.Scanner;
 
 
 public class Launcher {
 
     static Scanner scanner = new Scanner(System.in);
-    static HashMap<String, Object> stack;
+    static LinkedHashMap<String, Object> stack;
     static int line = 0;
     static String input;
     static boolean running = true;
 
     public static void main(String[] args) {
-        stack = new HashMap<>();
+        stack = new LinkedHashMap<>();
         System.out.println("Use command quit to quit.");
         while (running) {
             System.out.print("[" + (line) + "]>>> ");
@@ -25,11 +26,9 @@ public class Launcher {
         }
     }
 
-
     static void process(String instruction) {
         String[] tokens = instruction.split(" ", 0);
         switch (tokens[0]) {
-
             case "let":
                 switch (tokens[1]) {
                     case "int":
@@ -48,6 +47,14 @@ public class Launcher {
                         stack.put(tokens[2], instruction.split("\"", 0)[1]);
                         break;
 
+                    case "bool":
+                        if (!tokens[3].equals("true") && !tokens[3].equals("false")) {
+                            System.out.println("Invalid boolean " + tokens[3] + " at line " + line + ". Value must be true or false");
+                            break;
+                        }
+                        stack.put(tokens[2], Boolean.valueOf(tokens[3]));
+                        break;
+
                     case "PosInf":
                         stack.put(tokens[2], Double.POSITIVE_INFINITY);
                         break;
@@ -58,10 +65,6 @@ public class Launcher {
 
                     case "NaN":
                         stack.put(tokens[2], Double.NaN);
-                        break;
-
-                    case "table":
-
                         break;
 
                     default:
@@ -112,8 +115,43 @@ public class Launcher {
 
                 break;
 
-            case "struct":
+            case "stack-dump":
+                if (stack.isEmpty()) {
+                    System.out.println("Nothing on the stack!");
+                    break;
+                }
+                int greatestLength = 0;
+                for (String item : stack.keySet()) {
+                    if (item.length() > greatestLength) {
+                        greatestLength = item.length();
+                    }
+                }
+                for (String item : stack.keySet()) {
+                    int padding;
+                    padding = greatestLength - item.length() + 1;
+                    String spaces = " ".repeat(padding);
+                    String type = String.valueOf(stack.get(item).getClass());
+                    if (type.contains("BigInteger"))    type = "int";
+                    if (type.contains("BigDecimal"))    type = "float";
+                    if (type.contains("Character"))     type = "char";
+                    if (type.contains("String"))        type = "str";
+                    if (type.contains("Boolean"))       type = "bool";
+                    try {
+                        if (((Double) stack.get(item)).isInfinite() && !stack.get(item).toString().contains("-")) type = "PosInf";
+                        if (((Double) stack.get(item)).isInfinite() && stack.get(item).toString().contains("-")) type = "NegInf";
+                        if (((Double) stack.get(item)).isNaN()) type = "NaN";
+                    } catch (ClassCastException ignored) {}
+                    if (type.equals("str")) {
+                        System.out.println(item + spaces + "-> \"" + stack.get(item) + "\"    " + type);
+                    } else {
+                        System.out.println(item + spaces + "-> " + stack.get(item) + "    " + type);
+                    }
+                }
+                break;
 
+            case "stack-clear":
+                stack.clear();
+                System.out.println("Cleared the stack!");
                 break;
 
             default:
