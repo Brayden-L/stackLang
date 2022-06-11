@@ -1,0 +1,93 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:discord",
+      "color": {
+        "a": 1,
+        "rgb": 9730780
+      }
+    },
+    {
+      "query": "file:README",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "path:core/AI",
+      "color": {
+        "a": 1,
+        "rgb": 5410784
+      }
+    },
+    {
+      "query": "file:Event Handler.md",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "file:Core Application.md",
+      "color": {
+        "a": 1,
+        "rgb": 16711816
+      }
+    },
+    {
+      "query": "file:REST API.md",
+      "color": {
+        "a": 1,
+        "rgb": 14713938
+      }
+    },
+    {
+      "query": "path:\"core/database/SQL Databases\"",
+      "color": {
+        "a": 1,
+        "rgb": 15047121
+      }
+    },
+    {
+      "query": "path:core/database",
+      "color": {
+        "a": 1,
+        "rgb": 7921746
+      }
+    },
+    {
+      "query": "path:reddit",
+      "color": {
+        "a": 1,
+        "rgb": 16731392
+      }
+    },
+    {
+      "query": "path:factories/",
+      "color": {
+        "a": 1,
+        "rgb": 62207
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": -1.7,
+  "nodeSizeMultiplier": 1.53766081871345,
+  "lineSizeMultiplier": 2.9,
+  "collapse-forces": false,
+  "centerStrength": 0.412704218483297,
+  "repelStrength": 10.7510363326018,
+  "linkStrength": 0.318946598390636,
+  "linkDistance": 136,
+  "scale": 0.8360386601669683,
+  "close": true
+}

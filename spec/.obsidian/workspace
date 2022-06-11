@@ -1,0 +1,103 @@
+{
+  "main": {
+    "id": "818f089b16bc3290",
+    "type": "split",
+    "children": [
+      {
+        "id": "7acff0d58270efb2",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Keywords.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3eca14a7c1cc433e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b521aa17493b5a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d9e7d21bdec45b3c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d816a98bf049159b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 237.5036334991455
+  },
+  "right": {
+    "id": "cd77704de1df86b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b57f6ab6e89a857",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d2252e66db52eeca",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Keywords.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "7acff0d58270efb2",
+  "lastOpenFiles": [
+    "Keywords.md",
+    "Design.md",
+    "core/Event Handler.md",
+    "factories/Event Handler Factory.md",
+    "factories/Database Handler Connection.md",
+    "core/AI/AI Handler.md",
+    "core/database/Database Handler.md",
+    "interfaces/Handler.md",
+    "core/database/SQL Databases/Auth Database.md",
+    "core/Core Application.md"
+  ]
+}
